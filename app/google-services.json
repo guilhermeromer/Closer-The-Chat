@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "724088511526",
+    "firebase_url": "https://closer-the-chat.firebaseio.com",
+    "project_id": "closer-the-chat",
+    "storage_bucket": "closer-the-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724088511526:android:ec7be8626ea08545",
+        "android_client_info": {
+          "package_name": "com.pd.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724088511526-onbgbqfcv2ijq3fmvss9s3qe71i0gp3r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pd.chatapp",
+            "certificate_hash": "393d3845d1f53b7fb5408c34a89654d130f4ae27"
+          }
+        },
+        {
+          "client_id": "724088511526-089aaninodbd718dojsf5jvfakcpg6mq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFETUMVKyPK8VeKYKnnbujQvoMhhM6tfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724088511526-089aaninodbd718dojsf5jvfakcpg6mq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724088511526:android:a3e34f03953762b6",
+        "android_client_info": {
+          "package_name": "com.pd.closer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724088511526-089aaninodbd718dojsf5jvfakcpg6mq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFETUMVKyPK8VeKYKnnbujQvoMhhM6tfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724088511526-089aaninodbd718dojsf5jvfakcpg6mq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
