@@ -2,11 +2,14 @@ package com.pd.closer;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +20,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +37,8 @@ public class Users extends AppCompatActivity {
     ArrayList<String> al = new ArrayList<>();
     int totalUsers = 0;
     ProgressDialog pd;
+    ImageView fotinha;
+    Button startProfilePicture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +47,40 @@ public class Users extends AppCompatActivity {
 
         usersList = (ListView)findViewById(R.id.usersList);
         noUsersText = (TextView)findViewById(R.id.noUsersText);
+        fotinha = (ImageView) findViewById(R.id.fotoPerfil);
+        startProfilePicture = (Button) findViewById(R.id.startProfilePicture);
 
         pd = new ProgressDialog(Users.this);
         pd.setMessage("Loading...");
         pd.show();
+
+
+        startProfilePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Users.this, Camera.class));
+            }
+        });
+
+
+        //
+
+        //startProfilePicture.setOnClickListener(new View.OnClickListener() {
+
+        //    @Override
+
+        //    public void onClick(View v) {
+
+        //        startActivity(new Intent(Users.this, ProfilePicture.class));
+
+        //    }
+
+        //});
+
+        // Picasso.with(Users.this).load("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png").into(fotinha);
+
+
+
 
         String url = "https://closer-the-chat.firebaseio.com/users.json";
 

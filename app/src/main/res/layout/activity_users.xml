@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,6 +10,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.pd.closer.Users"
     android:orientation="vertical">
+
+    <Button
+        android:id="@+id/startProfilePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Foto Perfil" />
+
+    <ImageView
+        android:id="@+id/fotoPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:layout_width="match_parent"
