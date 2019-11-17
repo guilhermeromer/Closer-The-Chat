@@ -53,7 +53,7 @@ public class Users extends AppCompatActivity {
     int totalUsers = 0;
     ProgressDialog pd;
     ImageView fotinha;
-    private StorageReference mStorageRef;
+    StorageReference PicStorageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,8 +81,8 @@ public class Users extends AppCompatActivity {
             }
         });
 
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-                mStorageRef.child("profilepictures/" + UserDetails.username + ".jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        PicStorageRef = FirebaseStorage.getInstance().getReference();
+                PicStorageRef.child("profilepictures/" + UserDetails.username + ".jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
                         Picasso.with(Users.this).load(uri).transform(new CircleTransform()).centerCrop().fit().into(fotinha);

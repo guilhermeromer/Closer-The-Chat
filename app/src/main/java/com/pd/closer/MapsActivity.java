@@ -27,7 +27,7 @@ import org.json.JSONObject;
 
 public class MapsActivity extends Login implements OnMapReadyCallback, GoogleMap.OnPoiClickListener{
 
-    private GoogleMap map;
+    private GoogleMap mMap;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class MapsActivity extends Login implements OnMapReadyCallback, GoogleMap
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        Firebase.setAndroidContext(this);
 
 
     }
@@ -54,7 +55,6 @@ public class MapsActivity extends Login implements OnMapReadyCallback, GoogleMap
 
     @Override
     public void onMapReady(GoogleMap map) {
-
         map.setOnPoiClickListener(this);
     }
 
@@ -73,10 +73,10 @@ public class MapsActivity extends Login implements OnMapReadyCallback, GoogleMap
                 Firebase reference = new Firebase("https://closer-the-chat.firebaseio.com/users");
 
 
-                    reference.child(UserDetails.username).child("local").setValue(poi.placeId);
-                    UserDetails.newLocal = poi.placeId;
-                    Toast.makeText(MapsActivity.this, "Local selecionado: " + poi.name, Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(MapsActivity.this, Users.class));
+                reference.child(UserDetails.username).child("local").setValue(poi.placeId);
+                UserDetails.newLocal = poi.placeId;
+                Toast.makeText(MapsActivity.this, "Local selecionado: " + poi.name, Toast.LENGTH_LONG).show();
+                startActivity(new Intent(MapsActivity.this, Users.class));
 
                 pd.dismiss();
             }
