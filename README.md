@@ -1,4 +1,4 @@
-# Closer-The-Chat
+# Closer - The Chat
 Chat for Android devices based on Location (using Google Maps POIs).
 
 # What is Closer?
