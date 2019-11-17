@@ -27,7 +27,7 @@ import org.json.JSONObject;
 
 public class MapsActivity extends Login implements OnMapReadyCallback, GoogleMap.OnPoiClickListener{
 
-    private GoogleMap mMap;
+    private GoogleMap map;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +54,7 @@ public class MapsActivity extends Login implements OnMapReadyCallback, GoogleMap
 
     @Override
     public void onMapReady(GoogleMap map) {
+
         map.setOnPoiClickListener(this);
     }
 

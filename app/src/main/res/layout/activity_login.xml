@@ -12,11 +12,20 @@
     android:orientation="vertical"
     android:gravity="center">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="84dp"
+        android:layout_height="137dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/icon" />
+
+<!--
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+-->
     <EditText
         android:id="@+id/username"
         android:layout_width="391dp"
@@ -41,10 +50,14 @@
 
     <Button
         android:id="@+id/loginButton"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="@string/login" />
+        android:background="@drawable/buttonshape"
+        android:text="@string/login"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/register"
@@ -53,6 +66,8 @@
         android:gravity="center"
         android:text="Criar uma Conta"
         android:textSize="20sp" />
+
+
 
 
 </LinearLayout>

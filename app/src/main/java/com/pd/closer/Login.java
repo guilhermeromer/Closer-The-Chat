@@ -44,7 +44,7 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
 
-
+        getSupportActionBar().hide();
 
 
         registerUser.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +54,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        View signin = findViewById(R.id.sign_in_button);
+     /*   View signin = findViewById(R.id.sign_in_button);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
                         break;
                 }
             }
-        });
+        }); */
 
 
 

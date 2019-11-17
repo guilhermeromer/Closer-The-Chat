@@ -22,9 +22,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Register extends AppCompatActivity {
-    EditText username, password;
+    EditText username, password, password2;
     Button registerButton;
-    String user, pass;
+    String user, pass, pass2;
     TextView login;
 
     @Override
@@ -36,6 +36,9 @@ public class Register extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
         registerButton = (Button)findViewById(R.id.registerButton);
         login = (TextView)findViewById(R.id.login);
+        password2 =  findViewById(R.id.password2);
+
+        getSupportActionBar().hide();
 
         Firebase.setAndroidContext(this);
 
@@ -51,25 +54,30 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 user = username.getText().toString();
                 pass = password.getText().toString();
+                pass2 = password2.getText().toString();
 
                 if(user.equals("")){
-                    username.setError("can't be blank");
+                    username.setError("Não pode estar vazio.");
                 }
                 else if(pass.equals("")){
-                    password.setError("can't be blank");
+                    password.setError("Não pode estar vazio.");
                 }
                 else if(!user.matches("[A-Za-z0-9]+")){
-                    username.setError("only alphabet or number allowed");
+                    username.setError("Apenas letras e/ou números");
                 }
                 else if(user.length()<5){
-                    username.setError("at least 5 characters long");
+                    username.setError("Mínimo de 5 caracteres.");
                 }
                 else if(pass.length()<5){
-                    password.setError("at least 5 characters long");
+                    password.setError("Mínimo de 5 caracteres.");
+                }
+                else if(!pass2.equals(pass)){
+                    password.setError("As senhas não conferem.");
+                    password2.setError("As senhas não conferem.");
                 }
                 else {
                     final ProgressDialog pd = new ProgressDialog(Register.this);
-                    pd.setMessage("Loading...");
+                    pd.setMessage("Carregando...");
                     pd.show();
 
                     String url = "https://closer-the-chat.firebaseio.com/users.json";
@@ -81,7 +89,7 @@ public class Register extends AppCompatActivity {
 
                             if(s.equals("null")) {
                                 reference.child(user).child("password").setValue(pass);
-                                Toast.makeText(Register.this, "registration successful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Register.this, "Registrado com sucesso!", Toast.LENGTH_LONG).show();
                             }
                             else {
                                 try {
@@ -89,9 +97,9 @@ public class Register extends AppCompatActivity {
 
                                     if (!obj.has(user)) {
                                         reference.child(user).child("password").setValue(pass);
-                                        Toast.makeText(Register.this, "registration successful", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Register.this, "Registrado com sucesso!", Toast.LENGTH_LONG).show();
                                     } else {
-                                        Toast.makeText(Register.this, "username already exists", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Register.this, "Este username já existe. Escolha outro.", Toast.LENGTH_LONG).show();
                                     }
 
                                 } catch (JSONException e) {

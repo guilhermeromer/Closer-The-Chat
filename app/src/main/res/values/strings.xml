@@ -8,6 +8,6 @@
     <string name="click_here_to_login">Click here to login</string>
     <string name="enter_password">enter_password</string>
     <string name="register">Register</string>
-    <string name="title_activity_maps">Mapa</string>
+    <string name="title_activity_maps">Selecione um Lugar</string>
     <string name="title_activity_main">MainActivity</string>
 </resources>
